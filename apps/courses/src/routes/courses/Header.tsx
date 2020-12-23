@@ -3,7 +3,6 @@ import {
   Box,
   Flex,
   Link,
-  Icon,
   Stack,
   Avatar,
   Menu,
@@ -23,7 +22,6 @@ import {
   useFirestoreDocDataOnce,
 } from 'reactfire';
 import { Link as RRDLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBars,
   faUserCircle,
@@ -39,6 +37,7 @@ import { OpenMined } from '@openmined/shared/types';
 import CourseDrawer from './Drawer';
 
 import useToast, { toastConfig } from '../../components/Toast';
+import Icon from '../../components/Icon';
 import { getLinkPropsFromLink, handleErrors } from '../../helpers';
 import logo from '../../assets/logo.svg';
 import { getUserRef } from './_firebase';
@@ -183,11 +182,10 @@ export default ({
                       if (onClick) onClick();
                     }}
                   >
-                    {/* SEE TODO (#3) */}
                     {icon && (
                       <Icon
-                        as={FontAwesomeIcon}
                         icon={icon}
+                        boxSize={5}
                         size="lg"
                         color="gray.400"
                         mr={4}
@@ -235,9 +233,7 @@ export default ({
     >
       <Flex as="nav" align="center" justify="space-between">
         <Box width={{ base: 6, [BREAK]: 1 / 4 }}>
-          {/* SEE TODO (#3) */}
           <Icon
-            as={FontAwesomeIcon}
             icon={faBars}
             color="white"
             cursor="pointer"
@@ -247,12 +243,11 @@ export default ({
         <Box width={{ base: 'full', [BREAK]: 1 / 2 }} mx={4}>
           {!noTitle && (
             <Flex justify="center" align="center">
-              {/* SEE TODO (#3) */}
               {icon && (
                 <Icon
-                  as={FontAwesomeIcon}
                   icon={icon}
                   color="gray.700"
+                  boxSize={5}
                   size="lg"
                   mr={4}
                 />
@@ -278,10 +273,9 @@ export default ({
           justify="flex-end"
           display={{ base: 'flex', [BREAK]: 'none' }}
         >
-          {/* SEE TODO (#3) */}
           <Icon
-            as={FontAwesomeIcon}
             icon={faHome}
+            boxSize={5}
             size="lg"
             color="white"
             onClick={isRightDrawerOpen ? onRightDrawerClose : onRightDrawerOpen}

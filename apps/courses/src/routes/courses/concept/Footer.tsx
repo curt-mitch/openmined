@@ -4,7 +4,6 @@ import {
   Box,
   Button,
   Flex,
-  Icon,
   Link,
   Menu,
   MenuButton,
@@ -21,7 +20,6 @@ import {
   Text,
   Textarea,
 } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBug,
   faBullhorn,
@@ -29,6 +27,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import useToast, { toastConfig } from '../../../components/Toast';
+import Icon from '../../../components/Icon';
 import { getLinkPropsFromLink } from '../../../helpers';
 
 const BREAK = 'md';
@@ -60,8 +59,7 @@ const Feedback = ({
           _hover={{ color: 'gray.200' }}
         >
           <Flex align="center">
-            {/* SEE TODO (#3) */}
-            <Icon as={FontAwesomeIcon} icon={faBullhorn} />
+            <Icon icon={faBullhorn} />
             <Text display={{ base: 'none', [BREAK]: 'block' }} ml={4}>
               Give Feedback
             </Text>
@@ -160,8 +158,7 @@ const Help = ({ helpOpen, setHelpOpen }) => {
         _hover={{ color: 'gray.200' }}
       >
         <Flex align="center">
-          {/* SEE TODO (#3) */}
-          <Icon as={FontAwesomeIcon} icon={faCommentAlt} />
+          <Icon icon={faCommentAlt} />
           <Text display={{ base: 'none', [BREAK]: 'block' }} ml={4}>
             Get Help
           </Text>
@@ -171,11 +168,10 @@ const Help = ({ helpOpen, setHelpOpen }) => {
         {helpLinks.map(({ title, link, icon }, index) => {
           return (
             <MenuItem key={index} {...getLinkPropsFromLink(link)}>
-              {/* SEE TODO (#3) */}
               {icon && (
                 <Icon
-                  as={FontAwesomeIcon}
                   icon={icon}
+                  boxSize={5}
                   size="lg"
                   color="gray.400"
                   mr={4}
